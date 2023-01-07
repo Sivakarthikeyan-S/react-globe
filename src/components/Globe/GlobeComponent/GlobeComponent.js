@@ -18,7 +18,7 @@ export default function GlobeComponent() {
 
     const [data, setData] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
-    const colorScale = chroma.scale(['#1569bb', '#1177e1']);
+    const colorScale = chroma.scale(['#1177e1', '#1569bb']);
 
 
     React.useEffect(() => {
@@ -88,6 +88,7 @@ export default function GlobeComponent() {
                     width={500}
                     height={500}
                     backgroundColor="#000"
+                    color="#000"
                     // globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                     // backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
                     showAtmosphere={false}
@@ -99,7 +100,7 @@ export default function GlobeComponent() {
                         for (let i = 0, len = data.length; i < len; i++) {
                             lookup[data[i].countryName] = data[i];
                         }
-                        return colorScale(lookup[d.ADMIN]?.happinessScore * 0.1).brighten(0.5).hex();
+                        return colorScale(lookup[d.ADMIN]?.cbdcValue * 0.1).brighten(0.5).hex();
                     }}
                     polygonLabel={function ({ properties: d }) {
 
@@ -107,7 +108,7 @@ export default function GlobeComponent() {
                             lookup[data[i].countryName] = data[i];
                         }
 
-                        if(lookup[d.ADMIN]?.happinessScore)
+                        if(lookup[d.ADMIN]?.cbdcValue)
                         return `
                         <div style="position: relative; z-index: 4; min-width: 108px; padding: 10px 14px;background: #1a1a1a;border: 1px solid #E5E5E5;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             
