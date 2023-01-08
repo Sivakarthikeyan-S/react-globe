@@ -1,11 +1,10 @@
 import React from "react";
 import Globe from "react-globe.gl";
-import number from "numeral";
 import chroma from "chroma-js";
 import './GlobeComponent.css';
 
 export default function GlobeComponent() {
-    const [hoverD, setHoverD] = React.useState();
+    const [setHoverD] = React.useState();
     const globeEl = React.useRef();
     const [globeData, setGlobeData] = React.useState({
         countries: {
@@ -19,6 +18,7 @@ export default function GlobeComponent() {
     const [data, setData] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
     const colorScale = chroma.scale(['#1177e1', '#1569bb']);
+    const emptycolorScale = chroma.scale(['#1a1a1a', '#1a1a1a']);
 
 
     React.useEffect(() => {
@@ -100,7 +100,12 @@ export default function GlobeComponent() {
                         for (let i = 0, len = data.length; i < len; i++) {
                             lookup[data[i].countryName] = data[i];
                         }
-                        return colorScale(lookup[d.ADMIN]?.cbdcValue * 0.1).brighten(0.5).hex();
+                        if(lookup[d.ADMIN]?.cbdcValue) {
+                            return colorScale(lookup[d.ADMIN]?.cbdcValue * 0.1).brighten(0.5).hex();
+                        }
+                        else {
+                            return emptycolorScale(0.1).brighten(0.5).hex();
+                        }
                     }}
                     polygonLabel={function ({ properties: d }) {
 
@@ -141,7 +146,7 @@ export default function GlobeComponent() {
                             </div>
 
                             <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
-                                Technology partnerships: ${lookup[d.ADMIN]?.technologyPartnerships}
+                                Technology partnerships: ${lookup[d.ADMIN]?.technologyPartnership}
                             </div>
 
                             <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
