@@ -17,7 +17,7 @@ export default function GlobeComponent() {
 
     const [data, setData] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
-    const colorScale = chroma.scale(['#1177e1', '#1569bb']);
+    const colorScale = chroma.scale(['#1177e1', '#1177e1']);
     const emptycolorScale = chroma.scale(['#1a1a1a', '#1a1a1a']);
 
 
@@ -70,8 +70,7 @@ export default function GlobeComponent() {
 
                 globeEl.current.controls().autoRotate = true;
                 globeEl.current.controls().autoRotateSpeed = 0.5;
-                globeEl.current.controls().enableZoom = true;
-                globeEl.current.controls().zoom0 = 1;
+                globeEl.current.controls().enableZoom = false;
             }
         },
         [globeData]
@@ -85,15 +84,14 @@ export default function GlobeComponent() {
             {!loading && (
                 <Globe
                     ref={globeEl}
-                    width={500}
-                    height={500}
+                    width={600}
+                    height={600}
                     backgroundColor="#000"
-                    color="#000"
                     // globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                     // backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
                     showAtmosphere={false}
                     polygonsData={globeData.countries.features}
-                    polygonStrokeColor={() => "#1569bb"}
+                    polygonStrokeColor={() => "#1177e1"}
                     polygonSideColor={() => "rgba(0,0,0)"}
                     onPolygonHover={setHoverD}
                     polygonCapColor={function ({ properties: d }) {
@@ -115,58 +113,61 @@ export default function GlobeComponent() {
 
                         if(lookup[d.ADMIN]?.cbdcValue)
                         return `
-                        <div style="position: relative; z-index: 4; min-width: 108px; padding: 10px 14px;background: #1a1a1a;border: 1px solid #E5E5E5;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
-                            
-                            <div style="font-family: 'Open sans', sans-serif; margin-bottom:10px;font-weight: 600;font-size: 13px;line-height: 16px;text-transform: capitalize;color: #1177e1;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif; margin-bottom:10px;font-weight: 600;font-size: 16px;line-height: 16px;text-transform: capitalize;color: #1177e1;">
                                 ${d.ADMIN}
                             </div>
+                        </div>
 
-                            <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Status: ${lookup[d.ADMIN]?.status}
                             </div>
+                        </div>
 
-                            <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Use Case: ${lookup[d.ADMIN]?.useCase}
                             </div>
+                        </div>
 
-                            <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Technology: ${lookup[d.ADMIN]?.technology}
                             </div>
+                        </div>
 
-                            <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Architecture: ${lookup[d.ADMIN]?.architecture}
                             </div>
+                        </div>
 
-                            <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Underlying Technology: ${lookup[d.ADMIN]?.underlyingTechnology}
                             </div>
+                        </div>
 
-                            <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Access: ${lookup[d.ADMIN]?.access}
                             </div>
+                        </div>
 
-                            <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
-                                Technology partnerships: ${lookup[d.ADMIN]?.technologyPartnership}
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
+                                Technology partnerships: ${lookup[d.ADMIN]?.technologyPartnerships}
                             </div>
+                        </div>
 
-                            <div style="font-family: 'Open sans', sans-serif;padding-bottom: 5px;font-size: 13px;line-height: 16px;color: #c1c1c1;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                            <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Cross-border Projects: ${lookup[d.ADMIN]?.crossborderProjects}
                             </div>
-                            
                         </div>
                     `;
                     }}
-                    // labelsData={globeData.points.features}
-                    // labelLat={(d) => d.properties.latitude}
-                    // labelLng={(d) => d.properties.longitude}
-                    // labelAltitude={(d) => (d.properties.type === "order" ? 0.015 : 0.013)}
-                    // labelText={(d) => ""}
-                    // labelSize={(d) => 0.6}
-                    // labelDotRadius={(d) => 0.6}
-                    // labelColor={(d) =>
-                    //     d.properties.type === "order" ? "#5A68BD" : "#51CB90"
-                    // }
-                    // labelResolution={2}
                 />
             )}
 
