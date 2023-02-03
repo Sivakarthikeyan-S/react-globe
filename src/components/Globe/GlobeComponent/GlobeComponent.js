@@ -157,7 +157,7 @@ export default function GlobeComponent() {
 
                         <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
-                                Technology partnerships: ${lookup[d.ADMIN]?.technologyPartnerships}
+                                Technology partnerships: ${lookup[d.ADMIN]?.technologyPartnership}
                             </div>
                         </div>
 
