@@ -84,8 +84,8 @@ export default function GlobeComponent() {
             {!loading && (
                 <Globe
                     ref={globeEl}
-                    width={600}
-                    height={600}
+                    width={650}
+                    height={650}
                     backgroundColor="#000"
                     // globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                     // backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
@@ -113,55 +113,55 @@ export default function GlobeComponent() {
 
                         if(lookup[d.ADMIN]?.cbdcValue)
                         return `
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif; margin-bottom:10px;font-weight: 600;font-size: 16px;line-height: 16px;text-transform: capitalize;color: #1177e1;">
                                 ${d.ADMIN}
                             </div>
                         </div>
 
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Status: ${lookup[d.ADMIN]?.status}
                             </div>
                         </div>
 
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Use Case: ${lookup[d.ADMIN]?.useCase}
                             </div>
                         </div>
 
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Technology: ${lookup[d.ADMIN]?.technology}
                             </div>
                         </div>
 
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Architecture: ${lookup[d.ADMIN]?.architecture}
                             </div>
                         </div>
 
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Underlying Technology: ${lookup[d.ADMIN]?.underlyingTechnology}
                             </div>
                         </div>
 
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Access: ${lookup[d.ADMIN]?.access}
                             </div>
                         </div>
 
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Technology partnerships: ${lookup[d.ADMIN]?.technologyPartnership}
                             </div>
                         </div>
 
-                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 12px 10px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
+                        <div style="position: relative; z-index: 4; min-width: 180px; padding: 8px 6px;background: #1a1a1a;border: 1px solid #cacaca;box-shadow: 0px 2px 20px rgba(32, 32, 35, 0.13);border-radius: 4px; text-align: left;">
                             <div style="font-family: 'Open sans', sans-serif;font-size: 14px;line-height: 16px;color: #c1c1c1;">
                                 Cross-border Projects: ${lookup[d.ADMIN]?.crossborderProjects}
                             </div>
